@@ -1,0 +1,68 @@
+:root {
+  --pink: #ff69b4;
+  --dark: #1a0d1a;
+  --petty: #9b59b6;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: radial-gradient(circle at top, #2c003e, var(--dark));
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h1 {
+  color: var(--pink);
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px var(--pink);
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  background: linear-gradient(45deg, var(--pink), var(--petty));
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
