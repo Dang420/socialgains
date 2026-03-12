@@ -1,33 +1,27 @@
+// Check if Telegram WebApp is available
 const tg = window.Telegram.WebApp;
-tg.expand();
 
-function sendGift() {
-  const creator = document.getElementById('creator').value;
-  const amount = document.getElementById('amount').value;
-  const msg = document.getElementById('message').value;
+// Expand to full screen immediately
+if (tg) {
+    tg.expand();
+    tg.ready();
+}
 
-  if (!amount || amount < 1) {
-    tg.showAlert("Please enter a valid amount of Stars! 💝");
-    return;
-  }
+function sendPettyGift(amount) {
+    // Show a quick haptic feedback for a premium feel
+    if (tg.HapticFeedback) {
+        tg.HapticFeedback.impactOccurred('heavy');
+    }
 
-  // 🎊 The Celebration
-  confetti({
-    particleCount: 150,
-    spread: 60,
-    origin: { y: 0.7 },
-    colors: ['#ff69b4', '#9b59b6', '#f7d02c']
-  });
+    const data = {
+        stars: amount,
+        creator: "Permanently Petty",
+        message: amount >= 250 ? "Unlocking VIP Status! 💎" : "Stay petty! 💅"
+    };
 
-  // Package for Termux
-  const data = {
-    creator: creator,
-    stars: parseInt(amount),
-    message: msg || "Gifting from the App"
-  };
-
-  // Wait for the sparkles, then send
-  setTimeout(() => {
+    // Send the data string to the Python bot
     tg.sendData(JSON.stringify(data));
-  }, 1200);
+    
+    // Close the app so the user sees the invoice immediately
+    tg.close();
 }

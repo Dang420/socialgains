@@ -2,38 +2,29 @@
 <html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./style.css"><script src="https://cdn.jsdelivr.net/npm/es-module-shims@1.10.0/dist/es-module-shims.js" async=""></script><script type="importmap">{
   "imports": {}
-}</script></head><body>
-
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-
-  <div class="card">
-    <h1>PettyKitti Gifts 💝</h1>
-    
-    <div class="input-group">
-      <label>Target Creator</label>
-      <select id="creator">
-        <option value="permanentlypetty">Permanently Petty 🌈</option>
-        <option value="meankitti">Mean Kitti 🐝</option>
-      </select>
+}</script></head><body><div class="app-container">
+    <div class="header">
+        <div class="logo">💅</div>
+        <h1>PettyKitti Portal</h1>
+        <p>Support your favorite creators &amp; unlock 💎 VIP Status</p>
     </div>
 
-    <div class="input-group">
-      <label>Stars Amount</label>
-      <input type="number" id="amount" value="25" min="1">
+    <div class="gift-section">
+        <div class="card">
+            <h3>Standard Gift</h3>
+            <div class="price">50 Stars</div>
+            <button onclick="sendPettyGift(50)">Send Gift ✨</button>
+        </div>
+
+        <div class="card">
+            <h3>VIP Premier</h3>
+            <div class="price">250 Stars</div>
+            <button onclick="sendPettyGift(250)" class="vip-btn">Go VIP 💎</button>
+        </div>
     </div>
 
-    <div class="input-group">
-      <label>Message</label>
-      <textarea id="message" placeholder="Stay petty..."></textarea>
+    <div class="footer">
+        Powered by PettyKitti Systems 🐝
     </div>
-
-    <button onclick="sendGift()">Send Gift 🎁</button>
-  </div>
-
-
+</div>
 <script src="./script.js"></script></body></html>
